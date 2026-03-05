@@ -1,7 +1,3 @@
-
----
-
-```markdown
 # 🚀 Hackathon-0: Building Personal AI Employees
 
 Hackathon-0 is the foundational stage of building **Personal AI Employees** — autonomous AI agents capable of performing tasks, planning work, reasoning about problems, and interacting with tools.
