@@ -1,2 +1,32 @@
-credentials.json
+# .gitignore
+# Ignore the secrets
+**/gmail_token.json
+**/gmail_credentials.json
+**/.env
+node_modules/
+gmail_token.json
+gmail_credentials.json
 .env
+
+credentials.json
+token.json
+__pycache__/
+venv/
+*.pyc
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.env
+
+# Ignore sensitive JSON files
+**/gmail_token.json
+**/gmail_credentials.json
+
+# Ignore session data (Chrome/LinkedIn/WhatsApp sessions)
+**/session/
+**/.linkedin_session/
+
+# Ignore OS files
+Thumbs.db
+.DS_Store
