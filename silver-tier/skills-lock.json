@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "skills": {
+    "browsing-with-playwright": {
+      "source": "mjunaidca/mjs-agent-skills",
+      "sourceType": "github",
+      "computedHash": "f73daf75e38650c202e61f652a26578db157f8423e8bcf283bcd93b441641461"
+    },
+    "whatsapp-watcher": {
+      "source": "local",
+      "sourceType": "local",
+      "computedHash": "silver-tier-2026",
+      "description": "Monitors WhatsApp Web for urgent messages using Playwright",
+      "tier": "silver"
+    },
+    "linkedin-poster": {
+      "source": "local",
+      "sourceType": "local",
+      "computedHash": "silver-tier-2026",
+      "description": "Automatically posts business updates to LinkedIn",
+      "tier": "silver"
+    },
+    "plan-generator": {
+      "source": "local",
+      "sourceType": "local",
+      "computedHash": "silver-tier-2026",
+      "description": "Creates structured Plan.md files for Claude reasoning loop",
+      "tier": "silver"
+    },
+    "email-mcp": {
+      "source": "local",
+      "sourceType": "local",
+      "computedHash": "silver-tier-2026",
+      "description": "MCP server for sending emails via Gmail API",
+      "tier": "silver"
+    },
+    "hitl-approval": {
+      "source": "local",
+      "sourceType": "local",
+      "computedHash": "silver-tier-2026",
+      "description": "Human-in-the-Loop approval workflow system",
+      "tier": "silver"
+    },
+    "scheduler": {
+      "source": "local",
+      "sourceType": "local",
+      "computedHash": "silver-tier-2026",
+      "description": "Schedules tasks using cron or Windows Task Scheduler",
+      "tier": "silver"
+    }
+  },
+  "silverTierComplete": true,
+  "silverTierSkills": [
+    "whatsapp-watcher",
+    "linkedin-poster",
+    "plan-generator",
+    "email-mcp",
+    "hitl-approval",
+    "scheduler"
+  ],
+  "modularSkillSystem": {
+    "version": "1.0.0",
+    "totalSkills": 17,
+    "layers": {
+      "core": {
+        "skills": [
+          "read_markdown_file",
+          "parse_hackathon_requirements",
+          "task_extractor",
+          "task_prioritizer",
+          "execution_planner"
+        ],
+        "description": "Base classes and system skills for reasoning"
+      },
+      "perception": {
+        "skills": [
+          "google_watcher_skill",
+          "linkedin_watcher_skill",
+          "whatsapp_watcher_skill"
+        ],
+        "description": "Watcher skills for monitoring external sources"
+      },
+      "action": {
+        "skills": [
+          "task_creation",
+          "task_scheduling",
+          "decision_engine",
+          "action_executor",
+          "progress_tracker"
+        ],
+        "description": "Autonomous execution skills"
+      },
+      "integration": {
+        "skills": [
+          "read_vault_tasks",
+          "write_vault_tasks",
+          "update_task_status",
+          "log_agent_activity"
+        ],
+        "description": "Vault and memory management skills"
+      }
+    },
+    "orchestration": {
+      "name": "SkillOrchestrator",
+      "description": "Coordinates Perception → Reasoning → Action cycle",
+      "workflows": [
+        "process_inbox",
+        "daily_briefing",
+        "task_cleanup"
+      ]
+    },
+    "documentation": [
+      "SKILLS_DOCUMENTATION.md",
+      "USAGE_EXAMPLES.md",
+      "ARCHITECTURE_SUMMARY.md"
+    ]
+  }
+}

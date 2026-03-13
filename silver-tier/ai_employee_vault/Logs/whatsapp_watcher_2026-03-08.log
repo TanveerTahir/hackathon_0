@@ -1,0 +1,5 @@
+[2026-03-08T00:16:50.303608] [INFO] WhatsApp Watcher started
+[2026-03-08T00:17:15.601082] [ERROR] Error checking WhatsApp: Page.wait_for_selector: Target page, context or browser has been closed
+Call log:
+  - waiting for locator("[data-testid=\"chat-list\"]") to be visible
+
