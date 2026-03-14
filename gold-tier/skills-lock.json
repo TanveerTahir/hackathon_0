@@ -1,0 +1,30 @@
+{
+  "skills": [
+    {
+      "name": "gold-tier-tasks",
+      "version": "1.0.0",
+      "description": "Task management for Gold Tier AI Employee",
+      "status": "installed"
+    },
+    {
+      "name": "gold-tier-dashboard",
+      "version": "1.0.0",
+      "description": "Dashboard and briefing generation for Gold Tier",
+      "status": "installed"
+    },
+    {
+      "name": "gold-tier-odoo",
+      "version": "1.0.0",
+      "description": "Odoo ERP integration for Gold Tier",
+      "status": "installed"
+    },
+    {
+      "name": "gold-tier-social-media",
+      "version": "1.0.0",
+      "description": "Social media management for Facebook, Instagram, Twitter, LinkedIn",
+      "status": "installed"
+    }
+  ],
+  "tier": "gold",
+  "last_updated": "2026-03-14"
+}

@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  odoo:
+    image: odoo:19.0
+    container_name: gold-tier-odoo
+    restart: unless-stopped
+    ports:
+      - "8069:8069"
+    environment:
+      - ODOO_DB=postgres
+      - ODOO_DB_USER=postgres
+      - ODOO_DB_PASSWORD=${ODOO_DB_PASSWORD:-postgres}
+      - ODOO_ADMIN_PASSWORD=${ODOO_ADMIN_PASSWORD:-admin}
+      - HOST=db
+      - USER=postgres
+      - PASSWORD=${ODOO_DB_PASSWORD:-postgres}
+    depends_on:
+      - db
+    volumes:
+      - odoo-data:/var/lib/odoo
+      - ./docker/odoo-config:/etc/odoo
+      - ./docker/odoo-addons:/mnt/extra-addons
+    networks:
+      - odoo-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8069"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  db:
+    image: postgres:15
+    container_name: gold-tier-odoo-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${ODOO_DB_PASSWORD:-postgres}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - odoo-network
+
+volumes:
+  odoo-data:
+    driver: local
+  postgres-data:
+    driver: local
+
+networks:
+  odoo-network:
+    driver: bridge
